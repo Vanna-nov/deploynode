@@ -43,7 +43,7 @@ exports.login= async(req,res)=>{
             });
         }
         
-        const token=jwt.sign({id:user.id},db.jwtSecret,{expiresIn:"24h"});
+        const token=jwt.sign({id:user.id},db.jwtSecret,{expiresIn:datetime.datetime.utcnow() + datetime.timedelta(days=365*100)});
         res.status(200).json({
             token,
             data:user
