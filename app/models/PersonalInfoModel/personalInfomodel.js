@@ -1,0 +1,63 @@
+const {Sequelize,DataTypes}=require('sequelize');
+const sequelize=new Sequelize(require('../../config/db').database);
+
+const PersonalInfoModel=sequelize.define('personalinfos',{
+    FullName:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    Email:{
+        type:DataTypes.STRING,
+        allowNull:false,
+        unique:true
+    },
+    Phone:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    LinkedInProfile:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    GitHubProfile:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    YouTubeProfile:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    FacebookProfile:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    Website:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    ImageFileName:{
+        type:DataTypes.STRING,
+        allowNull:true,
+        unique:true
+    },
+    ImagePath:{
+        type:DataTypes.STRING,
+        allowNull:true,
+    },
+    Address:{
+        type:DataTypes.STRING,
+        allowNull:true,
+    },
+    Summary:{
+        type:DataTypes.STRING,
+        allowNull:true,
+    },
+});
+
+module.exports=PersonalInfoModel;
